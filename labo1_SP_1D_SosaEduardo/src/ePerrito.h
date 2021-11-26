@@ -38,7 +38,7 @@ int ePerrito_setNombre(ePerrito* this,char* nombre);
 int ePerrito_getNombre(ePerrito* this,char* nombre);
 
 
-int ePerrito_setEdad(ePerrito* this,int edad);
+int ePerrito_setEdad(ePerrito* this,int auxEdad);
 
 
 int ePerrito_getEdad(ePerrito* this,int* edad);
@@ -59,7 +59,6 @@ int ePerrito_getRaza(ePerrito* this,char* raza);
 
 int ePerrito_printData(ePerrito* this);
 
-int ePerros_laQueFiltra(void* this);
 
 int ePerrito_ordenarPorId(void* punteroUno, void* punteroDos);
 
@@ -70,6 +69,8 @@ int ePerrito_ordenarPeso(void* punteroUno, void* punteroDos);
 int ePerros_laQueMapea(void* this);
 
 int ePerrito_printDataRacion(ePerrito* this);
+
+int ePerros_laQueFiltra(void* this);
 
 
 

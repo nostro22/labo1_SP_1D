@@ -66,7 +66,7 @@ int controller_ListRacion(LinkedList* pArrayListEmployee)
 	if(pArrayListEmployee!=NULL)
 	{
 		int lenList = ll_len(pArrayListEmployee);
-		printf("%-10s  %-15s %-15s  %-15s %-15s %-20s\n", "ID", "NOMBRE", "SEXO", "EDAD", "PESO","RACION");
+		printf("%-10s  %-15s %-15s  %-15s %-15s %-25s\n", "ID", "NOMBRE", "SEXO", "EDAD", "PESO","RACION");
 		for (i = 0; i < lenList; ++i)
 		{
 			ePerrito* pPerrito =(ePerrito*) ll_get(pArrayListEmployee, i);
@@ -121,7 +121,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayList)
 
 		if(pFile!=NULL)
 		{
-			fprintf(pFile,"%-10s  %-15s %-15s  %-15s %-15s %-20s\n", "ID", "NOMBRE", "PESO", "EDAD", "RAZA", "RACION");
+			fprintf(pFile,"%s,%s,%s,%s,%s,%s\n", "ID", "NOMBRE", "PESO", "EDAD", "RAZA", "RACION");
 
 			for (int var = 0; var < tamArray; ++var)
 			{
@@ -133,7 +133,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayList)
 				ePerrito_getPeso(pPerrito, &peso);
 				ePerrito_getCantidadComidaRacion(pPerrito, &cantidadComidaRacion);
 
-				printf("%-10d %-15s %-15.2f  %-15d %-15s %-20.2f\n", id, nombre, peso, edad, raza, cantidadComidaRacion);
+				fprintf(pFile,"%d,%s,%.2f,%d,%s,%.2f\n", id, nombre, peso, edad, raza, cantidadComidaRacion);
 
 			}
 			printf("Archivo escrito con exito!\n");

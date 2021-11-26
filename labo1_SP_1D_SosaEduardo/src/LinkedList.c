@@ -597,7 +597,7 @@ LinkedList* ll_filter(LinkedList* this, int(*pFunc)(void*))
 	            for(int i=0;i<tam-1;i++)
 	            {
 	                aux=ll_get(this, i);
-	                if(pFunc(ll_get(this, i)))
+	                if(pFunc(ll_get(this, i))==1)
 	                {
 	                    if(ll_add(filterlist,  aux))
 	                    {
@@ -612,118 +612,5 @@ LinkedList* ll_filter(LinkedList* this, int(*pFunc)(void*))
 	    return filterlist;
 }
 
-LinkedList* ll_filterString(LinkedList* this, char* string, int(*pFunc)(void*,char*))
-{
-	LinkedList* filterlist=NULL;
-	    int tam;
-	    void* aux=NULL;
-	    if(this!=NULL && pFunc!=NULL)
-	    {
-	        filterlist=ll_newLinkedList();
-	        if(filterlist!=NULL)
-	        {
-	            tam=ll_len(this);
-	            for(int i=0;i<tam-1;i++)
-	            {
-	                aux=ll_get(this, i);
-	                if(pFunc(ll_get(this, i),string))
-	                {
-	                    if(ll_add(filterlist,  aux))
-	                    {
-	                        ll_deleteLinkedList(filterlist);
-	                        filterlist=NULL;
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-	    }
-	    return filterlist;
-}
 
-LinkedList* ll_filterInt(LinkedList* this, int entero, int(*pFunc)(void*,int))
-{
-	LinkedList* filterlist=NULL;
-	    int tam;
-	    void* aux=NULL;
-	    if(this!=NULL && pFunc!=NULL)
-	    {
-	        filterlist=ll_newLinkedList();
-	        if(filterlist!=NULL)
-	        {
-	            tam=ll_len(this);
-	            for(int i=0;i<tam-1;i++)
-	            {
-	                aux=ll_get(this, i);
-	                if(pFunc((ll_get(this, i)),entero))
-	                {
-	                    if(ll_add(filterlist,  aux))
-	                    {
-	                        ll_deleteLinkedList(filterlist);
-	                        filterlist=NULL;
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-	    }
-	    return filterlist;
-}
 
-LinkedList* ll_filterFloat(LinkedList* this, float flotante , int(*pFunc)(void*,float))
-{
-	LinkedList* filterlist=NULL;
-	    int tam;
-	    void* aux=NULL;
-	    if(this!=NULL && pFunc!=NULL)
-	    {
-	        filterlist=ll_newLinkedList();
-	        if(filterlist!=NULL)
-	        {
-	            tam=ll_len(this);
-	            for(int i=0;i<tam-1;i++)
-	            {
-	                aux=ll_get(this, i);
-	                if(pFunc((ll_get(this, i)),flotante))
-	                {
-	                    if(ll_add(filterlist,  aux))
-	                    {
-	                        ll_deleteLinkedList(filterlist);
-	                        filterlist=NULL;
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-	    }
-	    return filterlist;
-}
-
-LinkedList* ll_filterDosEstructuras(LinkedList* this, void* estructuraGuia , int(*pFunc)(void*,void*))
-{
-	LinkedList* filterlist=NULL;
-	    int tam;
-	    void* aux=NULL;
-	    if(this!=NULL && pFunc!=NULL)
-	    {
-	        filterlist=ll_newLinkedList();
-	        if(filterlist!=NULL)
-	        {
-	            tam=ll_len(this);
-	            for(int i=0;i<tam-1;i++)
-	            {
-	                aux=ll_get(this, i);
-	                if(pFunc((ll_get(this, i)),estructuraGuia))
-	                {
-	                    if(ll_add(filterlist,  aux))
-	                    {
-	                        ll_deleteLinkedList(filterlist);
-	                        filterlist=NULL;
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-	    }
-	    return filterlist;
-}

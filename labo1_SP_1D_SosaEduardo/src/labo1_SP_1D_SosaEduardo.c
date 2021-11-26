@@ -148,7 +148,6 @@ int main(void) {
 			{
 				pFuncionFiltros=ePerros_laQueFiltra;
 				listaGalgosFlacos = ll_filter(listaRacion, pFuncionFiltros);
-				controller_ListRacion(listaGalgosFlacos);
 			}
 			else
 			{
@@ -172,6 +171,8 @@ int main(void) {
 				printf("Lista Eliminada...\n");
 				printf("Saliendo del sistema...\n");
 				ll_deleteLinkedList(lista);
+				ll_deleteLinkedList(listaGalgosFlacos);
+				ll_deleteLinkedList(listaRacion);
 			}
 			else
 			{

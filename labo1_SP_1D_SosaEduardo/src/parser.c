@@ -7,11 +7,11 @@
 int parser_FromText(FILE* pFile , LinkedList* pArrayList)
 {
 	int retorno=-1;
-	char id[10];
+	char id[30];
 	char nombre[21];
-	char peso[10];
-	char edad[10];
-	char raza[10];
+	char peso[30];
+	char edad[30];
+	char raza[30];
 
 	if(pFile != NULL && pArrayList != NULL)
 	{

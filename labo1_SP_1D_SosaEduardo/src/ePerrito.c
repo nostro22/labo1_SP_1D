@@ -116,12 +116,12 @@ int ePerrito_getRaza(ePerrito* this,char* raza)
 
 /////EDAD INT
 
-int ePerrito_setEdad(ePerrito* this,int edad)
+int ePerrito_setEdad(ePerrito* this,int auxEdad)
 {
 	int seCargo = 0;
 	if(this != NULL)
 	{
-		this->edad = edad;
+		this->edad = auxEdad;
 		seCargo = 1;
 	}
 	return seCargo;
@@ -228,7 +228,7 @@ int ePerrito_printDataRacion(ePerrito* this)
 		ePerrito_getEdad(this, &edad);
 		ePerrito_getPeso(this, &peso);
 		ePerrito_getCantidadComidaRacion(this, &cantidadComidaRacion);
-		printf("%-10d  %-15s %-15.2f  %-15d %-15s %-15.2f\n", id, nombre, peso, edad, raza,cantidadComidaRacion);
+		printf("%-10d  %-15s %-15.2f  %-15d %-15s %-25.2f\n", id, nombre, peso, edad, raza,cantidadComidaRacion);
 	}
 	return retorno;
 }
@@ -321,16 +321,15 @@ int ePerros_laQueFiltra(void* this)
     float racion;
     int edad;
 
-    if(this!=NULL)
-    {
+
         ePerrito_getRaza((ePerrito*) this, auxRaza);
         ePerrito_getEdad((ePerrito*) this, &edad);
         ePerrito_getCantidadComidaRacion((ePerrito*) this, &racion);
-        if((strcmp(auxRaza,"Galgo")==0)&& racion<200 && edad>10)
+        if( racion<200 && edad>10 && (strcmp(auxRaza,"Galgo")==0))
         {
             retorno= 1;
         }
-    }
+
 
     return retorno;
 }
