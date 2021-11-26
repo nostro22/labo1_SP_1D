@@ -9,9 +9,10 @@ int parser_FromText(FILE* pFile , LinkedList* pArrayList)
 	int retorno=-1;
 	char id[10];
 	char nombre[21];
-	char raza[10];
-	char edad[10];
 	char peso[10];
+	char edad[10];
+	char raza[10];
+
 	if(pFile != NULL && pArrayList != NULL)
 	{
 		/// fscanf(punteroArchivo, formato(%d, %[^,]), ...)
