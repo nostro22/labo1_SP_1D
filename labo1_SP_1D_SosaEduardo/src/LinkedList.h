@@ -54,7 +54,4 @@ LinkedList* ll_subList(LinkedList* this,int from,int to);
 LinkedList* ll_clone(LinkedList* this);
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
 LinkedList* ll_filter(LinkedList* this, int(*pFunc)(void*));
-LinkedList* ll_filterInt(LinkedList* this, int entero, int(*pFunc)(void*,int));
-LinkedList* ll_filterFloat(LinkedList* this, float flotante , int(*pFunc)(void*,float));
-LinkedList* ll_filterDosEstructuras(LinkedList* this, void* estructuraGuia , int(*pFunc)(void*,void*));
 LinkedList* ll_map(LinkedList* this, int(*pFunc)(void*));

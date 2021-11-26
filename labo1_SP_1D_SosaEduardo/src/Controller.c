@@ -6,7 +6,6 @@
 #include "INPUTS.h"
 
 
-
 int controller_loadFromText(char* path , LinkedList* pArrayList)
 {
 
@@ -35,9 +34,6 @@ int controller_loadFromText(char* path , LinkedList* pArrayList)
 	}
 	return retorno;
 }
-
-
-
 
 
 int controller_List(LinkedList* pArrayListEmployee)
@@ -145,62 +141,3 @@ int controller_saveAsText(char* path , LinkedList* pArrayList)
 	return retorno;
 }
 
-
-int controller_saveAsBinary(char* path , LinkedList* pArrayList)
-{
-	printf("Guardando... Generando archivo binario\n");
-	int retorno=0;
-	int tamArray= ll_len(pArrayList);
-
-	FILE* pFile;
-	if(path!=NULL)
-	{
-		retorno=2;
-		pFile = fopen(path, "wb");
-
-		if(pFile!=NULL)
-		{
-			for (int var = 0; var < tamArray; ++var)
-			{
-				ePerrito* pAuxEmpleado =(ePerrito*) ll_get(pArrayList,var);
-				fwrite(pAuxEmpleado, sizeof(ePerrito), 1, pFile);
-			}
-			printf("Archivo escrito con exito!\n");
-			retorno=1;
-		}
-		fclose(pFile);
-	}
-	return retorno;
-}
-
-int perro_MasPesado(LinkedList* pArrayList, void* pPerroMasPesado)
-{
-	int i=0;
-	int retorno=0;
-	float pesoActual;
-	float pesoMayor;
-	ePerrito* pPerrito;
-
-	if(pArrayList!=NULL)
-	{
-		int lenList = ll_len(pArrayList);
-
-		for (i = 0; i < lenList; ++i)
-		{
-			pPerrito =(ePerrito*) ll_get(pArrayList, i);
-			pesoActual= ePerrito_getPeso(pPerrito, &pesoMayor);
-			if(i==0)
-			{
-				pesoMayor= ePerrito_getPeso(pPerrito, &pesoMayor);
-			}
-			else if(pesoMayor<pesoActual)
-			{
-				pesoMayor=pesoActual;
-				pPerroMasPesado= (void*) pPerrito;
-			}
-		}
-		retorno=1;
-	}
-
-	return retorno;
-}

@@ -114,7 +114,7 @@ int main(void) {
 			}
 			else
 			{
-				printf("Carge la base de datos primero\n");
+				printf("Carge la lista de el archivo primero\n");
 			}
 
 			option=0;
@@ -125,10 +125,11 @@ int main(void) {
 			{
 				pFuncionMapeo=ePerros_laQueMapea;
 				listaRacion = ll_map(lista, pFuncionMapeo);
+				printf("Se genero la lista mapeada\n");
 			}
 			else
 			{
-				printf("Carge la base de datos primero\n");
+				printf("Carge la lista de el archivo primero\n");
 			}
 
 			break;
@@ -139,7 +140,7 @@ int main(void) {
 			}
 			else
 			{
-				printf("Ningun Empleado en sistema\n");
+				printf("Primero genere la lista mapeada opcion 3\n");
 			}
 
 			break;
@@ -151,7 +152,7 @@ int main(void) {
 			}
 			else
 			{
-				printf("Ningun Empleado en sistema\n");
+				printf("Primero Genere la lista mapeada opcion 3\n");
 			}
 			break;
 		case 6:
@@ -161,7 +162,7 @@ int main(void) {
 			}
 			else
 			{
-				printf("Ningun Empleado en sistema\n");
+				printf("Primero debe filtrar la lista Filtrada opcion 5\n");
 			}
 			break;
 		case 7:
@@ -176,7 +177,7 @@ int main(void) {
 			}
 			else
 			{
-				printf("Ningun Empleado en sistema\n");
+				printf("\n");
 			}
 
 			break;

@@ -254,60 +254,6 @@ int ePerrito_ordenarPorNombre(void* punteroUno, void* punteroDos)
 	return retorno;
 }
 
-
-
-int ePerrito_ordenarPorId(void* punteroUno, void* punteroDos)
-{
-	int retorno=-2;
-	if(punteroUno!=NULL&&punteroDos!=NULL)
-	{
-		int idUno;
-		int idDos;
-		ePerrito* this = (ePerrito*)punteroUno;
-		ePerrito* this2 = (ePerrito*)punteroDos;
-		ePerrito_getId(this,&idUno);
-		ePerrito_getId(this2,&idDos);
-
-		if(idUno>idDos)
-		{
-			retorno=1;
-		}
-		else if(idUno<idDos)
-		{
-			retorno=-1;
-		}
-		this =NULL;
-		this2=NULL;
-	}
-	return retorno;
-}
-
-int ePerrito_ordenarPeso(void* punteroUno, void* punteroDos)
-{
-	int retorno=-2;
-	if(punteroUno!=NULL&&punteroDos!=NULL)
-	{
-		float peso1;
-		float peso2;
-		ePerrito* this = (ePerrito*)punteroUno;
-		ePerrito* this2 = (ePerrito*)punteroDos;
-		ePerrito_getPeso(this,&peso1);
-		ePerrito_getPeso(this2,&peso2);
-
-		if(peso1>peso2)
-		{
-			retorno=1;
-		}
-		else if(peso1<peso2)
-		{
-			retorno=-1;
-		}
-		this =NULL;
-		this2=NULL;
-	}
-	return retorno;
-}
-
 ///////// Filtros
 
 
